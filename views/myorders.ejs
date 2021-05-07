@@ -1,0 +1,46 @@
+<%- include("./partials/header.ejs") %>
+    <div class="container mt-5" id="orders">
+        <% if(data.length !=0){ %> 
+            <% data.forEach(order=>{ %>
+                <div class="row booked1">
+                    <div class="col-sm-5">
+                        <img src="<%= order.qr %> " alt="">
+                    </div>
+                    <div class="col-sm-7 mb-3">
+                        
+                        <div class="row">
+                            <h4>
+                                <%= order.movie %>
+                            </h4>
+                            <div class="d-none d-md-block col-md-6">
+                                <h3>
+                                    <%=order.theatre%>, <%=order.city%>
+                                </h3>
+                                <h5>
+                                    <%=order.seatNo.length%>
+                                </h5>
+                                <%order.seatNo.forEach(seat=>{%>
+                                    <p class="seatno">
+                                        <%=seat%>&nbsp;&nbsp;
+                                    </p>
+                                <%})%>
+                            </div>
+                            <div class="col-md-6">
+                                <a class="btn btn-danger m-3" href="/del/<%= order._id %> ">Cancel Ticket</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           <% })%>
+        <% }else{ %>
+            <div class="card" style="width: 15rem; margin-left: 180px; border: 2px solid black;">
+                <img src="https://i.pinimg.com/originals/32/3e/3b/323e3b47f07fa1fb0a4b2ecb03b2c965.png" class="card-img-top" alt="...">
+                <hr>
+                <div class="card-body">
+                  <p class="card-text">No Orders..!</p>
+                  <a href="/" class="btn btn-success btn-block">Book</a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+<%- include("./partials/footer.ejs") %>

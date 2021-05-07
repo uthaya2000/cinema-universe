@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <div class="sidenav">
+        <div class="login-main-text">
+           <h2>Cinema Universe</h2>
+           <p>Cinema should make you forget you are sitting in a theater.
+            </p>
+        </div>
+     </div>
+     <div class="main">
+        <div class="col-md-6">
+           <div class="login-form">
+            <% if(msg){ %> 
+               <div class="container mb-3" id="msglogin" style="width: 50%;">
+                  <h4><%= msg %> </h4>
+               </div>
+            <% } %> 
+              <form action="/login" method="POST">
+                 <div class="form-group">
+                    <label>User Name or E-mail</label>
+                    <input type="text" class="form-control" placeholder="User Name or email" name="email">
+                 </div>
+                 <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="Password" name="password">
+                 </div>
+                 <button type="submit" class="btn btn-black">Login</button>
+                 <a href="/signup" class="btn btn-info">Register</a>
+              </form>
+           </div>
+        </div>
+     </div>
+</body>
+</html>

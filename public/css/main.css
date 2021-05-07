@@ -1,0 +1,150 @@
+#theater .cards{
+    margin-right: 30px;
+}
+#city{
+    width: 30%;
+}
+#city .city-list{
+    background-color: black;
+    color: white;
+    height: 50px;
+}
+
+#theater .cards img{
+    height: 200px;
+}
+
+#book i{
+    font-size: xx-large;
+}
+
+#book .img{
+    
+    border-right: 2px solid rgba(166, 158, 157, 0.3);
+}
+#book .screen{
+    border-bottom: 10px solid black;
+}
+
+.booked{
+    color: red;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+
+
+.main-head{
+    height: 150px;
+    background: #FFF;
+   
+}
+
+.sidenav {
+    height: 100%;
+    background-color: #000;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+
+.main {
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+    .login-form{
+        margin-top: 10%;
+    }
+
+    .register-form{
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .main{
+        margin-left: 40%; 
+    }
+
+    .sidenav{
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .login-form{
+        margin-top: 80%;
+    }
+
+    .register-form{
+        margin-top: 20%;
+    }
+}
+
+
+.login-main-text{
+    margin-top: 20%;
+    padding: 60px;
+    color: #fff;
+}
+
+.login-main-text h2{
+    font-weight: 300;
+}
+
+.btn-black{
+    background-color: #000 !important;
+    color: #fff;
+}
+
+#signup{
+    width: 50%;
+}
+
+#orders{
+    width: 50%;
+    top: 50%;
+}
+
+.booked1{
+    margin-bottom:80px;
+    background-color: transparent;
+    max-height:200px;
+    display:flex;
+    border-radius:0px;
+    align-items:center;
+    justify-content:center;
+    box-sizing: border-box;
+    box-shadow: 5px 3px 50px 2px rgba(128, 128, 128,0.7);
+}
+.booked1 img{
+    /* width:100%; */
+    height:180px;
+    object-fit:contain;
+}
+.booked1 .seatno{
+    display:inline;
+}
+
+#navbar a{
+    float: right;
+}
+
+#msglogin{
+    font-weight: 600;
+    color: red;
+}
+
+#signuppage{
+    font-weight: 600;
+    color: red;
+}

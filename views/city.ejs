@@ -1,0 +1,18 @@
+  
+<%- include("./partials/header.ejs") %>
+
+
+<div class="container mt-5">
+    <div class="container mt-5" id="city">
+        <div class="list-group-item list-group-item-action city-list d-flex justify-content-center">
+            Select City
+        </div>
+            <% theaters.forEach((place)=>{ %>
+                <a href="/theater/<%= place %>/" class="list-group-item list-group-item-action d-flex justify-content-center">
+                    <%= place %>
+                </a>
+            <% }) %>
+    </div>
+</div>
+  
+<%- include("./partials/footer.ejs") %>

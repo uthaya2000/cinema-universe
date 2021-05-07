@@ -1,0 +1,68 @@
+<%- include("./partials/header1.ejs") %>
+    <div class="container mt-5" id="book">
+        <div class="alert alert-danger" role="alert">
+            Don't refresh the page
+        </div>
+        <p style="display:none;" id="theatreName"><%=movie.name%></p>
+        <p style="display:none;" id="cityName"><%=movie.city%></p>
+        <p style="display:none;" id="movName"><%=movie.movie%></p>
+        <p style="display:none;" id="pricet"><%= movie.price %></p>
+        <h2 class="d-flex justify-content-center mb-5"><%= movie.movie %> </h2>
+        <div class="row">
+            <div class="col-md-6 img justify-content-center">
+                <div class="card" style="width: 18rem;">
+                    <img src="<%= movie.tposter %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text"><%= movie.address %> </p>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <label for="to" class="form-label">Date of Booking</label> 
+                    <input type="date" min="<%= date %>" id="select_date" class="form-control" value="<%= date %>">
+                    <div class="form-text">Please select date that should be greater than or equal to <b> <%= date %></b></div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-3 mt-lg-0">
+                <div class="d-flex flex-wrap justify-content-center">
+                    <% movie.seats.forEach(seat => { %>
+                        <% if(booked && booked.includes(seat)) {%> 
+                            <i class='bx bx-chair m-1 booked' id="<%= seat %>"></i>
+                        <% }else{ %>
+                            <i class='bx bx-chair m-1' id="<%= seat %>" onclick="booked(this.id)"></i>
+                        <% } %> 
+                    <% })%>
+                </div>
+                <div class="screen mt-5">
+                    <p class="d-flex justify-content-center"><strong>Screen</strong></p>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <p class="lead">Rs. <span id="pricec">0</span></p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex justify-content-end">
+                            <button data-bs-toggle="modal" data-bs-target="#check" class="btn btn-success" onclick="checkoutu()">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="check" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel"><%= movie.movie %> </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="model-body">
+                    
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <a href="/" class="btn btn-primary">confirm</a>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+<%- include("./partials/footer.ejs") %>

@@ -1,0 +1,22 @@
+<%- include("./partials/header.ejs") %>
+
+<div class="container" id="theater">
+    <div class="row mt-5">
+    <% movies.forEach(movie=>{ %>
+            <div class="col-md-3 cards">
+                <div class="card" style="width: 18rem; ">
+                    <img src="<%= movie.mposter %> " class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= movie.movie %></h5>
+                      <p class="card-text"><%= movie.name %></p>
+                      <hr>
+                      <p class="card-text"><%= movie.address %></p>
+                      <a href="/book/<%= movie._id %>/" class="btn btn-dark">Book</a>
+                    </div>
+                </div>
+            </div>
+    <% }) %>
+    </div> 
+</div>
+
+<%- include("./partials/footer.ejs") %>
